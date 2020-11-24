@@ -24,7 +24,8 @@
   <div class="field">
     <%= form.label :image %>
     <% if params[:action] == "edit" %>
-      <%= image_tag @book.image %>
+      <!--<%= image_tag @book.image %>-->
+      <%= image_tag @book.image if @book.image.attached? %>
     <% end %>
     <%= form.file_field :image %>
   </div>
