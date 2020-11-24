@@ -12,7 +12,10 @@
 
 <p>
   <strong>Image: </strong>
-  <%= image_tag @book.image %>
+  <!--<%= image_tag @book.image %>-->
+  <% if @book.image.nil? %>
+    <%= image_tag @book.image %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
