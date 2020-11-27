@@ -28,8 +28,7 @@
   
   <div class="field">
     <%= form.label :image %>
-    <%= image_tag @book.image if @book.image.attached? %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image %><br>
   </div>
 
   <div class="actions">

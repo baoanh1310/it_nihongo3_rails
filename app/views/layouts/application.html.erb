@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Thefirstrails</title>
+    <title>Mysecondtrails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,7 @@
   </head>
 
   <body>
+<<<<<<< HEAD
       <%= link_to "Home", root_path %> 
       <% if user_signed_in? %>
       <br>
@@ -18,10 +19,18 @@
       <!--<%= link_to current_user.email, users_show_path %> <br>-->
       <%= link_to current_user.name.empty? ? current_user.email : current_user.name , users_show_path %> <br>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+=======
+    <%= link_to "ホーム", root_path %>
+    <% if user_signed_in? %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <%= link_to current_user.name, users_show_path %>
+>>>>>>> d74dccd938a24a2927a4d4f8fcdd396b9fe43ab0
     <% else %>
-      <%= link_to "Sign in", new_user_session_path %> 
-      <%= link_to "Sign up", new_user_registration_path %><br>
+    <%= link_to "サインイン", new_user_session_path %>
+    <%= link_to "ユーザ登録", new_user_registration_path %>
     <% end %>
+    <hr>
+
     <%= yield %>
   </body>
 </html>
