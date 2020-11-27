@@ -28,6 +28,15 @@
   <%= f.hidden_field :book_id, value: @book.id %>
   <%= f.text_area :review %><br>
   <%= f.submit "Submit" %>
+<% end %><br>
+<h2><b>Review List</b></h2>
+
+<% unless @book.book_reviews.empty? %>
+  <ul>
+    <% @book.book_reviews.each do |review| %>
+      <li><%= review.review %>(<%= review.user_id %>)</li>
+    <% end %>
+  </ul>
 <% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
