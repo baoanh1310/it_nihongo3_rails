@@ -34,7 +34,8 @@
 <% unless @book.book_reviews.empty? %>
   <ul>
     <% @book.book_reviews.each do |review| %>
-      <li><%= review.review %>(<%= review.user_id %>)</li>
+      <!--<li><%= review.review %>(<%= review.user_id %>)</li>-->
+      <li><%= review.review %>(<%= review.user.name.empty? ? review.user.email : review.user.name %>)</li>
     <% end %>
   </ul>
 <% end %>
